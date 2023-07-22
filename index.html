@@ -1,10 +1,11 @@
+<!DOCTYPE html>
 <html>
-	<body>
-		<div style="display: flex; flex-direction: column;">
-			<div id="inputs">
-				<div>
-					I am a change	
-				</div>
+	<head>
+		<link rel="stylesheet" href="index.css">
+		<script src="index.js"></script>
+	</head>
+		<div class="main">
+			<div class="inputs bottom-margin">
 				<div>
 					<label for="work-outside">Do you work outside of Johnstown</label>
 					<select type="text" id="work-outside">
@@ -22,13 +23,13 @@
 				</div>
 			</div>
 			
-			<div id="inputs" style="border: 1px solid; border-radius: 5px; padding: 5px;">
+			<div class="inputs">
 				<table>
 					<tr>
-						<th>Line item</th>
-						<th>Current</th>
-						<th>Proposed</th>
-						<th>Savings</th>
+						<th style="padding: 0 5px;">Line item</th>
+						<th style="padding: 0 5px;">Current</th>
+						<th style="padding: 0 5px;">Proposed</th>
+						<th style="padding: 0 5px;">Savings</th>
 					</tr>
 					<tr>
 						<td>Place of work Tax Rate</td>
@@ -54,7 +55,7 @@
 						<td>Total taxes due</td>
 						<td>$3,000</td>
 						<td>$2,500</td>
-						<td style="background-color: green; color: white;">$500</td>
+						<td class="green">$500</td>
 					</tr>
 				</table>
 			</div>

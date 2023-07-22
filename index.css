@@ -1,6 +1,29 @@
-#inputs {
+td {
+	text-align: center;
+	border-radius: 5px;
+}
+
+.inputs {
 	border: 1px solid;
 	border-radius: 5px;
 	padding: 5px;
+}
+
+.bottom-margin {
 	margin-bottom: 4rem;
+}
+
+.main {
+	display: flex;
+	flex-direction: column;
+}
+
+.red {
+	background-color: red;
+	color: white;
+}
+
+.green {
+	background-color: green;
+	color: white;
 }
