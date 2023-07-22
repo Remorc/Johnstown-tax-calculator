@@ -1,0 +1,60 @@
+<html>
+	<body>
+		<div style="display: flex; flex-direction: column;">
+			<div id="inputs" style="border: 1px solid; border-radius: 5px; padding: 5px; margin-bottom: 4rem;">
+				<div>
+					<label for="work-outside">Do you work outside of Johnstown</label>
+					<select type="text" id="work-outside">
+						<option value="yes">yes</option>
+						<option value="no">no</option>
+					</select>
+				</div>
+				<div>
+					<label for="tax-rate">Current tax rate payed to place of work</label>
+					<input type="text" id="tax-rate" />
+				</div>
+				<div>
+					<label for="income">Gross income</label>
+					<input type="text" id="income" />
+				</div>
+			</div>
+			
+			<div id="inputs" style="border: 1px solid; border-radius: 5px; padding: 5px;">
+				<table>
+					<tr>
+						<th>Line item</th>
+						<th>Current</th>
+						<th>Proposed</th>
+						<th>Savings</th>
+					</tr>
+					<tr>
+						<td>Place of work Tax Rate</td>
+						<td>2.00%</td>
+						<td>2.00%</td>
+					</tr>
+					<tr>
+						<td>Tax due to place of work</td>
+						<td>$2,000</td>
+						<td>$2,000</td>
+					</tr>
+					<tr>
+						<td>Credit</td>
+						<td>$0</td>
+						<td>$1,500</td>
+					</tr>
+					<tr>
+						<td>Tax due to Johnstown</td>
+						<td>$1,000</td>
+						<td>$500</td>
+					</tr>
+					<tr>
+						<td>Total taxes due</td>
+						<td>$3,000</td>
+						<td>$2,500</td>
+						<td style="background-color: green; color: white;">$500</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</body>
+</html>
