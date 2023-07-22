@@ -1,6 +1,24 @@
+body {
+	max-width: 500px;
+}
+
+th {
+	padding: 0 5px;
+}
+
 td {
 	text-align: center;
 	border-radius: 5px;
+}
+
+.question {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.answer {
+	width: 30%;
 }
 
 .inputs {
@@ -11,11 +29,6 @@ td {
 
 .bottom-margin {
 	margin-bottom: 4rem;
-}
-
-.main {
-	display: flex;
-	flex-direction: column;
 }
 
 .red {
