@@ -5,12 +5,12 @@
 		<script src="index.js"></script>
 	</head>
 	<body>
-		<div class="inputs bottom-margin">
+		<form class="section bottom-margin" onsubmit="return onSubmit()">
 			<div class="question">
 				<label for="work-outside">Do you work outside of Johnstown</label>
 				<select class="answer" type="text" id="work-outside">
-					<option value="yes">yes</option>
-					<option value="no">no</option>
+					<option value="yes">YES</option>
+					<option value="no">NO</option>
 				</select>
 			</div>
 			<div class="question">
@@ -21,9 +21,13 @@
 				<label for="income">Gross income</label>
 				<input class="answer" type="text" id="income" />
 			</div>
-		</div>
-		
-		<div class="inputs">
+			<div class="buttons">
+				<input type="button" value="Reset" />
+				<input type="submit" value="Calculate" />
+			</div>
+		</form>
+
+		<div id="outputs" class="section hidden">
 			<table>
 				<tr>
 					<th>Line item</th>
