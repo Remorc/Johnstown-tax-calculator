@@ -6,62 +6,44 @@
 	</head>
 	<body>
 		<form class="section bottom-margin" onsubmit="return onSubmit()">
-			<div class="question">
+			<div class="data-row">
 				<label for="work-outside">Do you work outside of Johnstown</label>
-				<select class="answer" type="text" id="work-outside">
+				<select id="work-outside" class="answer" type="text">
 					<option value="yes">YES</option>
 					<option value="no">NO</option>
 				</select>
 			</div>
-			<div class="question">
+			<div class="data-row">
 				<label for="tax-rate">Current tax rate payed to place of work</label>
-				<input class="answer" type="text" id="tax-rate" />
+				<input id="tax-rate" class="answer" type="number" min=0 step=".01" placeholder="1.25" />
 			</div>
-			<div class="question">
+			<div class="data-row">
 				<label for="income">Gross income</label>
-				<input class="answer" type="text" id="income" />
+				<input id="income" class="answer" type="number" min=0 step="1" placeholder="10000" />
 			</div>
 			<div class="buttons">
-				<input type="button" value="Reset" />
-				<input type="submit" value="Calculate" />
+				<input id="submit" type="submit" value="Calculate" />
 			</div>
 		</form>
 
 		<div id="outputs" class="section hidden">
-			<table>
-				<tr>
-					<th>Line item</th>
-					<th>Current</th>
-					<th>Proposed</th>
-					<th>Savings</th>
-				</tr>
-				<tr>
-					<td>Place of work Tax Rate</td>
-					<td>2.00%</td>
-					<td>2.00%</td>
-				</tr>
-				<tr>
-					<td>Tax due to place of work</td>
-					<td>$2,000</td>
-					<td>$2,000</td>
-				</tr>
-				<tr>
-					<td>Credit</td>
-					<td>$0</td>
-					<td>$1,500</td>
-				</tr>
-				<tr>
-					<td>Tax due to Johnstown</td>
-					<td>$1,000</td>
-					<td>$500</td>
-				</tr>
-				<tr>
-					<td>Total taxes due</td>
-					<td>$3,000</td>
-					<td>$2,500</td>
-					<td class="green">$500</td>
-				</tr>
-			</table>
+			<div class="results-section">
+				<div class="data-row">
+					<div>Taxes due (current)</div>
+					<div id="current-taxes-due" class="result">$1,000</div>
+				</div>
+				<div class="data-row">
+					<div>Taxes due (proposed)</div>
+					<div id="proposed-taxes-due" class="result">$500</div>
+				</div>
+				<div class="data-row">
+					<div>Difference</div>
+	 				<div id="difference" class="green result">$500</div>
+				</div>
+			</div>
+			<div class="buttons">
+				<input type="button" value="Edit" onclick="onEdit()" />
+			</div>
 		</div>
 	</body>
 </html>
