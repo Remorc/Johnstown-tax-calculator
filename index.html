@@ -5,16 +5,17 @@
 		<script src="index.js"></script>
 	</head>
 	<body>
+		<div class="header-statement">ALL VALUES SHOWN ARE AN ESTIMATE</div>
 		<form class="section bottom-margin" onsubmit="return onSubmit()">
 			<div class="data-row">
-				<label for="work-outside">Do you work outside of Johnstown</label>
-				<select id="work-outside" class="answer" type="text">
+				<label for="work-outside">Do you work outside of Johnstown?</label>
+				<select id="work-outside" class="answer" type="text" onchange="onWorkOutsideChange()">
 					<option value="yes">YES</option>
 					<option value="no">NO</option>
 				</select>
 			</div>
-			<div class="data-row">
-				<label for="tax-rate">Current tax rate payed to place of work</label>
+			<div class="data-row hidden" data-tip="Hello there">
+				<label for="tax-rate">Place of work tax rate</label>
 				<input id="tax-rate" class="answer" type="number" min=0 step=".01" placeholder="1.25" />
 			</div>
 			<div class="data-row">

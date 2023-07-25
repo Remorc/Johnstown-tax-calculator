@@ -5,6 +5,18 @@ function disableInputs(workOutside, taxRate, income) {
 	income.disabled = true
 }
 
+function onWorkOutsideChange() {
+	const workOutside = document.getElementById("work-outside").value
+	const taxRate = document.getElementById("tax-rate")
+	
+	if (workOutside === 'yes') {
+		taxRate.disabled = false
+	} else {
+		taxRate.value = null
+		taxRate.disabled = true
+	}	
+}
+
 function calculateCurrentTaxes(workOutside, taxRate, income) {
 	const CURRENT_TAX_RATE = .01
 	const johnstownTaxes = income * CURRENT_TAX_RATE
