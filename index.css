@@ -33,6 +33,12 @@
 	}
 }
 
+body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
 .hidden {
 	display: none;
 }
@@ -49,6 +55,7 @@
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	margin-bottom: 0.5rem;
 }
 
 .answer {
@@ -62,6 +69,7 @@
 }
 
 .section {
+	width: 100%;
 	max-width: 32rem;
 	border: 1px solid;
 	border-radius: 5px;
