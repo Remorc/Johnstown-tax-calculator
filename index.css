@@ -17,10 +17,6 @@
 	html {
 		font-size: 18px;
 	}
-	
-	.section {
-		max-width: 32rem;
-	}
 } 
 
 /* Large devices (laptops/desktops, 992px and up) */
@@ -28,20 +24,12 @@
 	html {
 		font-size: 20px;
 	}
-	
-	.section {
-		max-width: 32rem;
-	}
 } 
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
 	html {
 		font-size: 20px;
-	}
-	
-	.section {
-		max-width: 32rem;
 	}
 }
 
@@ -82,6 +70,7 @@ body {
 
 .section {
 	width: 100%;
+	max-width: 32rem;
 	border: 1px solid;
 	border-radius: 5px;
 	padding: 5px;
