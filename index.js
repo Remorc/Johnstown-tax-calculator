@@ -69,9 +69,18 @@ function onSubmit() {
 	const workOutside = document.getElementById("work-outside")
 	const taxRate = document.getElementById("tax-rate")
 	const income = document.getElementById("income")
+	let missingFieldsErrorText = []
+	
+	if (workOutside.value === "yes" && !taxRate.value) {
+		missingFieldsErrorText.push("tax rate")
+	}
+	
+	if (!income.value) {
+		missingFieldsErrorText.push("income")
+	}
 
-	if (!taxRate.value || !income.value) {
-		alert("Missing fields")
+	if (missingFieldsErrorText.length > 0) {
+		alert(`Missing fields: ${missingFieldsErrorText.join(", ")}`)
 		return false;
 	}
 	
@@ -83,9 +92,10 @@ function onSubmit() {
 }
 
 function onEdit() {
+	const workOutside = document.getElementById("work-outside")
 	document.getElementById("outputs").classList.add("hidden")
-	document.getElementById("work-outside").disabled = false
-	document.getElementById("tax-rate").disabled = false
+	workOutside.disabled = false
+	document.getElementById("tax-rate").disabled = workOutside.value !== "yes"
 	document.getElementById("income").disabled = false
 	document.getElementById("submit").disabled = false
 }
