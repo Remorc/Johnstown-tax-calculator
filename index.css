@@ -1,42 +1,17 @@
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-	html {
-		font-size: 14px;
-	}
-} 
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-	html {
-		font-size: 16px;
-	}
-} 
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-	html {
-		font-size: 18px;
-	}
-} 
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-	html {
-		font-size: 20px;
-	}
-} 
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-	html {
-		font-size: 20px;
-	}
+html {
+	height: 100vh;
+	width: 100vw;
+	font-size: 24px;
 }
 
 body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+}
+
+input, select {
+	font-size: 24px;
 }
 
 .hidden {
@@ -70,7 +45,6 @@ body {
 
 .section {
 	width: 100%;
-	max-width: 32rem;
 	border: 1px solid;
 	border-radius: 5px;
 	padding: 5px;
