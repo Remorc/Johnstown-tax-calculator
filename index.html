@@ -24,7 +24,7 @@
 				<input id="income" class="answer" type="number" min=0 step="1" placeholder="100000" />
 			</div>
 			<div class="buttons">
-				<input id="submit" type="submit" value="Calculate" />
+				<input class="button" id="submit" type="submit" value="Calculate" />
 			</div>
 		</form>
 
@@ -38,17 +38,21 @@
 					<div>Johnstown Taxes Due</div>
 					<div id="johnstown-taxes-due" class="result">$2250</div>
 				</div>
+				<div class="data-row separator">
+					<div>Total Taxes Due (before 75% credit)</div>
+					<div id="gross-taxes-due" class="result">$4750</div>
+				</div>
 				<div class="data-row">
 					<div>Johnstown Tax Credit</div>
 					<div id="johnstown-tax-credit" class="result">$1688</div>
 				</div>
-				<div class="data-row">
-					<div>Total Taxes Due</div>
+				<div class="data-row separator">
+					<div>Total Taxes Due (after 75% credit)</div>
 					<div id="total-taxes-due" class="result">$3062</div>
 				</div>
 				<div class="data-row">
 					<div>Savings</div>
-					<div id="total-taxes-due" class="result green">$438</div>
+					<div id="savings" class="result green">$438</div>
 				</div>
 
 
@@ -66,7 +70,7 @@
 				</div> -->
 			</div>
 			<div class="buttons">
-				<input type="button" value="Edit" onclick="onEdit()" />
+				<input class="button" type="button" value="Edit" onclick="onEdit()" />
 			</div>
 		</div>
 	</body>

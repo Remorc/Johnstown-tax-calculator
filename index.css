@@ -1,14 +1,9 @@
-html {
-	height: 100vh;
-	width: 100vw;
-	font-size: 24px;
-	font-family: 'Open Sans';
-}
-
 body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	font-size: 24px;
+	font-family: 'Open Sans';
 }
 
 input, select {
@@ -21,7 +16,7 @@ input, select {
 
 .header-statement {
 	width: 100%;
-	font-size: 1.5rem;
+	font-size: 2rem;
 	margin-bottom: 1rem;
 	color: red;
 	text-align: center;
@@ -32,6 +27,10 @@ input, select {
 	flex-direction: row;
 	justify-content: space-between;
 	margin-bottom: 0.5rem;
+}
+
+.separator {
+	border-bottom: 1px dashed;
 }
 
 .answer {
@@ -63,6 +62,10 @@ input, select {
 	padding: 1px 5px;
 	text-align: center;
 	border-radius: 5px;
+}
+
+.button {
+	width: 10rem;
 }
 
 .red {
