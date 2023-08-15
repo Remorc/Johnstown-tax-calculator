@@ -7,7 +7,7 @@
 	</head>
 	<body>
 		<div class="header-statement">ALL VALUES SHOWN ARE AN ESTIMATE</div>
-		<form class="section bottom-margin" onsubmit="return onSubmit()">
+		<form class="section" onsubmit="return onSubmit()">
 			<div class="data-row">
 				<label for="work-outside">Do you work outside of Johnstown?</label>
 				<select id="work-outside" class="answer" type="text" onchange="onWorkOutsideChange()">
@@ -35,7 +35,7 @@
 					<div id="employment-taxes-due" class="result">$2500</div>
 				</div>
 				<div class="data-row">
-					<div>Johnstown Taxes Due</div>
+					<div>Johnstown Taxes Due (2.25%)</div>
 					<div id="johnstown-taxes-due" class="result">$2250</div>
 				</div>
 				<div class="data-row separator-dashed">
@@ -60,7 +60,7 @@
 					<div id="current-employment-taxes-due" class="result">$2500</div>
 				</div>
 				<div class="data-row">
-					<div>Johnstown Taxes Due</div>
+					<div>Johnstown Taxes Due (1.00%)</div>
 					<div id="current-johnstown-taxes-due" class="result">$1000</div>
 				</div>
 				<div class="data-row">
@@ -85,6 +85,41 @@
 			<div class="buttons">
 				<input class="button" type="button" value="Edit" onclick="onEdit()" />
 			</div>
+		</div>
+
+		<div class="section">
+			<table cellpadding="0" cellspacing="0">
+				<tr>
+					<td>Columbus - 2.50%</td>
+					<td>Bexley - 2.50%</td>
+					<td>Gahanna - 2.50%</td>
+					<td>Hilliard - 2.50%</td>
+				</tr>
+				<tr>
+					<td>Reynoldsburg - 2.50%</td>
+					<td>Upper Arlington - 2.50%</td>
+					<td>Worthington - 2.50%</td>
+					<td>Brice - 2.00%</td>
+				</tr>
+				<tr>
+					<td>Canal Winchester - 2.00%</td>
+					<td>Etna - 2.00%</td>
+					<td>Grove City - 2.00%</td>
+					<td>Groveport - 2.00%</td>
+				</tr>
+				<tr>
+					<td>New Albany - 2.00%</td>
+					<td>Mount Vernon - 2.00%</td>
+					<td>Powell - 2.00%</td>
+					<td>Newark - 2.00%</td>
+				</tr>
+				<tr>
+					<td>Utica - 1.75%</td>
+					<td>Plain City - 1.50%</td>
+					<td>Pataskala - 1.00%</td>
+					<td>Sunbury - 1.00%</td>
+				</tr>
+			</table>
 		</div>
 	</body>
 </html>
