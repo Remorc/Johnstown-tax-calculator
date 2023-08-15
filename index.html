@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,300" rel="stylesheet" type="text/css">
 		<link rel="stylesheet" href="index.css">
 		<script src="index.js"></script>
 	</head>
@@ -27,9 +28,31 @@
 			</div>
 		</form>
 
-		<div id="outputs" class="section hidden">
+		<div id="outputs" class="section">
 			<div class="results-section">
 				<div class="data-row">
+					<div>Place of Employment Taxes Due</div>
+					<div id="employment-taxes-due" class="result">$2500</div>
+				</div>
+				<div class="data-row">
+					<div>Johnstown Taxes Due</div>
+					<div id="johnstown-taxes-due" class="result">$2250</div>
+				</div>
+				<div class="data-row">
+					<div>Johnstown Tax Credit</div>
+					<div id="johnstown-tax-credit" class="result">$1688</div>
+				</div>
+				<div class="data-row">
+					<div>Total Taxes Due</div>
+					<div id="total-taxes-due" class="result">$3062</div>
+				</div>
+				<div class="data-row">
+					<div>Savings</div>
+					<div id="total-taxes-due" class="result green">$438</div>
+				</div>
+
+
+				<!-- <div class="data-row">
 					<div>Taxes due (current)</div>
 					<div id="current-taxes-due" class="result"></div>
 				</div>
@@ -40,7 +63,7 @@
 				<div class="data-row">
 					<div>Difference</div>
 	 				<div id="difference" class="result"></div>
-				</div>
+				</div> -->
 			</div>
 			<div class="buttons">
 				<input type="button" value="Edit" onclick="onEdit()" />
