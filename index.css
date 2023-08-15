@@ -1,13 +1,18 @@
-body {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+html {
 	font-size: 24px;
 	font-family: 'Open Sans';
 }
 
+body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	/* font-size: 24px; */
+	/* font-family: 'Open Sans'; */
+}
+
 input, select {
-	font-size: 24px;
+	font-size: 1rem;
 }
 
 .hidden {
@@ -16,7 +21,7 @@ input, select {
 
 .header-statement {
 	width: 100%;
-	font-size: 2rem;
+	font-size: 1.5rem;
 	margin-bottom: 1rem;
 	color: red;
 	text-align: center;
@@ -26,11 +31,21 @@ input, select {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	margin-bottom: 0.5rem;
+	padding: 0.25rem 0;
 }
 
-.separator {
+.title {
+	font-size: 1.5rem;
+	margin-top: 2rem;
+	text-align: center;
+}
+
+.separator-dashed {
 	border-bottom: 1px dashed;
+}
+
+.separator-solid {
+	border-bottom: 2px solid;
 }
 
 .answer {
