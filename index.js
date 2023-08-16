@@ -1,5 +1,4 @@
 function disableInputs(workOutside, taxRate, income) {
-	document.getElementById("submit").disabled = true
 	workOutside.disabled = true
 	taxRate.disabled = true
 	income.disabled = true
@@ -7,56 +6,67 @@ function disableInputs(workOutside, taxRate, income) {
 
 function onWorkOutsideChange() {
 	const workOutside = document.getElementById("work-outside").value
-	const taxRate = document.getElementById("tax-rate")
 	
 	if (workOutside === 'yes') {
-		taxRate.disabled = false
+		document.getElementById("tax-rate-row").classList.remove("hidden")//disabled = false
+		document.getElementById("employment-taxes-row").classList.remove("hidden")
+		document.getElementById("current-employment-taxes-row").classList.remove("hidden")
 	} else {
-		taxRate.value = null
-		taxRate.disabled = true
+		document.getElementById("tax-rate").value = null
+		document.getElementById("tax-rate-row").classList.add("hidden")//disabled = false
+		document.getElementById("employment-taxes-row").classList.add("hidden")
+		document.getElementById("current-employment-taxes-row").classList.add("hidden")
 	}	
 }
 
-function calculateCurrentTaxes(workOutside, taxRate, income) {
+function calculateCurrentTaxes(taxRate, income) {
 	const CURRENT_TAX_RATE = .01
-	const johnstownTaxes = income * CURRENT_TAX_RATE
-	let placeOfWorkTaxes = 0
+	const placeOfWorkTaxes = Math.trunc(income * taxRate)
+	const johnstownTaxes = Math.trunc(income * CURRENT_TAX_RATE)
 	
-	if (workOutside) {
-		placeOfWorkTaxes = income * taxRate	
+	return {
+		placeOfWorkTaxes,
+		johnstownTaxes,
+		total: johnstownTaxes + placeOfWorkTaxes
 	}
-	
-	return johnstownTaxes + placeOfWorkTaxes
 }
 
-function calculateProposedTaxes(workOutside, taxRate, income) {
+function calculateProposedTaxes(taxRate, income) {
 	const PROPOSED_TAX_RATE = .0225
-	let placeOfWorkTaxes = 0
-	let taxCredit = 0
-	
-	if (workOutside) {
-		placeOfWorkTaxes = income * taxRate
-		taxCredit = income * Math.min(taxRate, PROPOSED_TAX_RATE) * 0.75
-	}
+	const placeOfWorkTaxes = Math.trunc(income * taxRate)
+	const johnstownTaxes = Math.trunc(income * PROPOSED_TAX_RATE)
+	const credit = Math.trunc(income * Math.min(taxRate, PROPOSED_TAX_RATE) * 0.75)
 
-	const johnstownTaxes = income * PROPOSED_TAX_RATE
-	
-	return johnstownTaxes + placeOfWorkTaxes - taxCredit
+	return {
+		placeOfWorkTaxes,
+		johnstownTaxes,
+		credit,
+		grossTotal: placeOfWorkTaxes + johnstownTaxes,
+		total: placeOfWorkTaxes + johnstownTaxes - credit
+	}
 }
 
-function calculateTaxes(workOutside, taxRate, income) {
-	const currentTaxes = Math.trunc(calculateCurrentTaxes(workOutside, taxRate, income))
-	const proposedTaxes = Math.trunc(calculateProposedTaxes(workOutside, taxRate, income))
-	const calculatedDifference = Math.trunc(currentTaxes - proposedTaxes)
-	const difference = document.getElementById("difference")
-	
-	document.getElementById("current-taxes-due").innerHTML = `$${currentTaxes}`
-	document.getElementById("proposed-taxes-due").innerHTML = `$${proposedTaxes}`
+function calculateTaxes(taxRate, income) {
+	const currentTaxes = calculateCurrentTaxes(taxRate, income)
+	const proposedTaxes = calculateProposedTaxes(taxRate, income)
+
+	document.getElementById("current-employment-taxes-due").innerHTML = `$${currentTaxes.placeOfWorkTaxes}`
+	document.getElementById("current-johnstown-taxes-due").innerHTML = `$${currentTaxes.johnstownTaxes}`
+	document.getElementById("current-gross-taxes-due").innerHTML = `$${currentTaxes.total}`
+
+	document.getElementById("employment-taxes-due").innerHTML = `$${proposedTaxes.placeOfWorkTaxes}`
+	document.getElementById("johnstown-taxes-due").innerHTML = `$${proposedTaxes.johnstownTaxes}`
+	document.getElementById("gross-taxes-due").innerHTML = `$${proposedTaxes.grossTotal}`
+	document.getElementById("johnstown-tax-credit").innerHTML = `$${proposedTaxes.credit}`
+	document.getElementById("total-taxes-due").innerHTML = `$${proposedTaxes.total}`
+
+	const difference = document.getElementById("savings")
+	const calculatedDifference = currentTaxes.total - proposedTaxes.total
+
 	difference.innerHTML = `$${calculatedDifference}`
 	difference.classList.remove("red")
 	difference.classList.remove("green")
 	
-	console.log(calculatedDifference)
 	if (calculatedDifference > 0) {
 		difference.classList.add("green")
 	}
@@ -84,18 +94,22 @@ function onSubmit() {
 		return false;
 	}
 	
-	document.getElementById("outputs").classList.remove("hidden")
+	document.getElementById("proposed-outputs").classList.remove("hidden")
+	document.getElementById("current-outputs").classList.remove("hidden")
 	disableInputs(workOutside, taxRate, income)
-	calculateTaxes(workOutside.value === "yes", taxRate.value * .01, income.value)
+	calculateTaxes(taxRate.value * .01, income.value)
+	document.getElementById("submit").classList.add("hidden")
+	document.getElementById("edit").classList.remove("hidden")
 
 	return false
 }
 
 function onEdit() {
-	const workOutside = document.getElementById("work-outside")
-	document.getElementById("outputs").classList.add("hidden")
-	workOutside.disabled = false
-	document.getElementById("tax-rate").disabled = workOutside.value !== "yes"
+	document.getElementById("proposed-outputs").classList.add("hidden")
+	document.getElementById("current-outputs").classList.add("hidden")
+	document.getElementById("edit").classList.add("hidden")
+	document.getElementById("submit").classList.remove("hidden")
+	document.getElementById("work-outside").disabled = false
+	document.getElementById("tax-rate").disabled = false
 	document.getElementById("income").disabled = false
-	document.getElementById("submit").disabled = false
 }

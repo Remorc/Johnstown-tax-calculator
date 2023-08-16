@@ -15,7 +15,7 @@
 					<option value="no">NO</option>
 				</select>
 			</div>
-			<div class="data-row hidden" data-tip="Hello there">
+			<div id="tax-rate-row" class="data-row">
 				<label for="tax-rate">Place of work tax rate</label>
 				<input id="tax-rate" class="answer" type="number" min=0 step=".01" placeholder="1.25" />
 			</div>
@@ -25,65 +25,51 @@
 			</div>
 			<div class="buttons">
 				<input class="button" id="submit" type="submit" value="Calculate" />
+				<input class="button hidden" id="edit" type="button" value="Edit" onclick="onEdit()" />
 			</div>
 		</form>
 
-		<div id="outputs" class="section">
-			<div class="results-section">
-				<div class="data-row">
-					<div>Place of Employment Taxes Due</div>
-					<div id="employment-taxes-due" class="result">$2500</div>
-				</div>
-				<div class="data-row">
-					<div>Johnstown Taxes Due (2.25%)</div>
-					<div id="johnstown-taxes-due" class="result">$2250</div>
-				</div>
-				<div class="data-row separator-dashed">
-					<div>Total Taxes Due (before 75% credit)</div>
-					<div id="gross-taxes-due" class="result">$4750</div>
-				</div>
-				<div class="data-row">
-					<div>Johnstown Tax Credit</div>
-					<div id="johnstown-tax-credit" class="result">$1688</div>
-				</div>
-				<div class="data-row separator-dashed">
-					<div>Total Taxes Due (after 75% credit)</div>
-					<div id="total-taxes-due" class="result">$3062</div>
-				</div>
-				<div class="data-row separator-solid">
-					<div>Savings</div>
-					<div id="savings" class="result green">$438</div>
-				</div>
-				<div class="title">You are currently paying the following taxes</div>
-				<div class="data-row">
-					<div>Place of Employment Taxes Due</div>
-					<div id="current-employment-taxes-due" class="result">$2500</div>
-				</div>
-				<div class="data-row">
-					<div>Johnstown Taxes Due (1.00%)</div>
-					<div id="current-johnstown-taxes-due" class="result">$1000</div>
-				</div>
-				<div class="data-row">
-					<div>Total taxes if ballot does not pass</div>
-					<div id="current-gross-taxes-due" class="result">$3500</div>
-				</div>
-
-
-				<!-- <div class="data-row">
-					<div>Taxes due (current)</div>
-					<div id="current-taxes-due" class="result"></div>
-				</div>
-				<div class="data-row">
-					<div>Taxes due (proposed)</div>
-					<div id="proposed-taxes-due" class="result"></div>
-				</div>
-				<div class="data-row">
-					<div>Difference</div>
-	 				<div id="difference" class="result"></div>
-				</div> -->
+		<div id="current-outputs" class="section darkened hidden">
+			<div class="title">You are currently paying the following taxes</div>
+			<div class="data-row" id="current-employment-taxes-row">
+				<div>Place of Employment Taxes Due</div>
+				<div id="current-employment-taxes-due" class="result">$2500</div>
 			</div>
-			<div class="buttons">
-				<input class="button" type="button" value="Edit" onclick="onEdit()" />
+			<div class="data-row">
+				<div>Johnstown Taxes Due (1.00%)</div>
+				<div id="current-johnstown-taxes-due" class="result">$1000</div>
+			</div>
+			<div class="data-row">
+				<div>Total taxes if ballot does not pass</div>
+				<div id="current-gross-taxes-due" class="result">$3500</div>
+			</div>
+		</div>
+
+		<div id="proposed-outputs" class="section hidden">
+			<div class="title">Taxes you will pay if the ballot passes</div>
+			<div class="data-row" id="employment-taxes-row">
+				<div>Place of Employment Taxes Due</div>
+				<div id="employment-taxes-due" class="result">$2500</div>
+			</div>
+			<div class="data-row">
+				<div>Johnstown Taxes Due (2.25%)</div>
+				<div id="johnstown-taxes-due" class="result">$2250</div>
+			</div>
+			<div class="data-row separator-dashed">
+				<div>Total Taxes Due (before 75% credit)</div>
+				<div id="gross-taxes-due" class="result">$4750</div>
+			</div>
+			<div class="data-row">
+				<div>Johnstown Tax Credit</div>
+				<div id="johnstown-tax-credit" class="result">$1688</div>
+			</div>
+			<div class="data-row separator-dashed">
+				<div>Total Taxes Due (after 75% credit)</div>
+				<div id="total-taxes-due" class="result">$3062</div>
+			</div>
+			<div class="data-row">
+				<div>Savings</div>
+				<div id="savings" class="result">$438</div>
 			</div>
 		</div>
 
