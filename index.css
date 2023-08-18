@@ -26,6 +26,10 @@ tr:nth-child(2n) {
 	background-color: lightgray;
 }
 
+input::placeholder {
+    color: lightgray;
+}
+
 .hidden {
 	display: none !important;
 }
