@@ -2,24 +2,43 @@ function disableInputs(workOutside, taxRate, income) {
 	workOutside.disabled = true
 	taxRate.disabled = true
 	income.disabled = true
+	document.getElementById("place-of-work").disabled = true
 }
 
 function formatToDollar(input) {
 	return `$${input.toLocaleString("en-US")}`
 }
 
+function onPlaceOfWorkChange() {
+	const placeOfWork = document.getElementById("place-of-work")
+	const taxRate = document.getElementById("tax-rate")
+
+	if (placeOfWork.value === "default") {
+		taxRate.disabled = true
+		taxRate.value = null
+	} else if (!!placeOfWork.value) {
+		taxRate.disabled = true
+		taxRate.value = placeOfWork.value
+	} else {
+		taxRate.disabled = false
+		taxRate.value = null
+	}
+}
+
 function onWorkOutsideChange() {
 	const workOutside = document.getElementById("work-outside").value
 	
 	if (workOutside === 'yes') {
-		document.getElementById("tax-rate-row").classList.remove("hidden")//disabled = false
+		document.getElementById("tax-rate-row").classList.remove("hidden")
 		document.getElementById("employment-taxes-row").classList.remove("hidden")
 		document.getElementById("current-employment-taxes-row").classList.remove("hidden")
+		document.getElementById("place-of-work-row").classList.remove("hidden")
 	} else {
 		document.getElementById("tax-rate").value = null
-		document.getElementById("tax-rate-row").classList.add("hidden")//disabled = false
+		document.getElementById("tax-rate-row").classList.add("hidden")
 		document.getElementById("employment-taxes-row").classList.add("hidden")
 		document.getElementById("current-employment-taxes-row").classList.add("hidden")
+		document.getElementById("place-of-work-row").classList.add("hidden")
 	}	
 }
 
@@ -116,6 +135,10 @@ function onEdit() {
 	document.getElementById("submit").classList.remove("hidden")
 	document.getElementById("tax-table").classList.remove("hidden")
 	document.getElementById("work-outside").disabled = false
-	document.getElementById("tax-rate").disabled = false
 	document.getElementById("income").disabled = false
+	document.getElementById("place-of-work").disabled = false
+	
+	if (!document.getElementById("place-of-work").value) {
+		document.getElementById("tax-rate").disabled = false
+	}
 }

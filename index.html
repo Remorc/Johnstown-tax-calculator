@@ -15,9 +15,42 @@
 					<option value="no">NO</option>
 				</select>
 			</div>
+
+			<div id="place-of-work-row" class="data-row">
+				<label for="place-of-work">Where do you work?</label>
+				<select id="place-of-work" class="answer" type="text" onchange="onPlaceOfWorkChange()">
+					<option default value="default">Choose a Value</option>
+					<option value="2.50">Bexley</option>
+					<option value="2.00">Brice</option>
+					<option value="2.00">Canal Winchester</option>
+					<option value="2.50">Columbus</option>
+					<option value="2.00">Etna</option>
+					<option value="2.50">Gahanna</option>
+					<option value="1.50">Granville</option>
+					<option value="2.00">Grove City</option>
+			 		<option value="2.00">Groveport</option>
+					<option value="2.00">Heath</option>
+					<option value="2.50">Hilliard</option>
+					<option value="2.00">Mount Vernon</option>
+					<option value="2.00">New Albany</option>
+					<option value="1.75">Newark</option>
+					<option value="1.00">Pataskala</option>
+					<option value="1.50">Plain City</option>
+					<option value="2.00">Powell</option>
+					<option value="2.50">Reynoldsburg</option>
+					<option value="1.00">Sunbury</option>
+					<option value="2.00">Westerville</option>
+					<option value="2.50">Whitehall</option>
+					<option value="2.50">Worthington</option>
+					<option value="2.50">Upper Arlington</option>
+					<option value="1.75">Utica</option>
+					<option value="">Other</option>
+				</select>
+			</div>
+
 			<div id="tax-rate-row" class="data-row">
 				<label for="tax-rate">Place of work tax rate</label>
-				<input id="tax-rate" class="answer" type="number" min=0 step=".01" placeholder="1.25" />
+				<input id="tax-rate" disabled class="answer" type="number" min=0 step=".25" />
 			</div>
 			<div class="data-row">
 				<label for="income">Gross income</label>
