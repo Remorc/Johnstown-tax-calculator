@@ -21,7 +21,7 @@
 			</div>
 			<div class="data-row">
 				<label for="income">Gross income</label>
-				<input id="income" class="answer" type="number" min=0 step="1" placeholder="100000" />
+	 			<input id="income" class="answer" type="number" min=0 step="1" placeholder="35000" />
 			</div>
 			<div class="buttons">
 				<input class="button" id="submit" type="submit" value="Calculate" />
@@ -33,15 +33,15 @@
 			<div class="title">You are currently paying the following taxes</div>
 			<div class="data-row" id="current-employment-taxes-row">
 				<div>Place of Employment Taxes Due</div>
-				<div id="current-employment-taxes-due" class="result">$2500</div>
+				<div id="current-employment-taxes-due" class="result"></div>
 			</div>
 			<div class="data-row">
 				<div>Johnstown Taxes Due (1.00%)</div>
-				<div id="current-johnstown-taxes-due" class="result">$1000</div>
+				<div id="current-johnstown-taxes-due" class="result"></div>
 			</div>
 			<div class="data-row">
 				<div>Total taxes if ballot does not pass</div>
-				<div id="current-gross-taxes-due" class="result">$3500</div>
+				<div id="current-gross-taxes-due" class="result"></div>
 			</div>
 		</div>
 
@@ -49,61 +49,67 @@
 			<div class="title">Taxes you will pay if the ballot passes</div>
 			<div class="data-row" id="employment-taxes-row">
 				<div>Place of Employment Taxes Due</div>
-				<div id="employment-taxes-due" class="result">$2500</div>
+				<div id="employment-taxes-due" class="result"></div>
 			</div>
 			<div class="data-row">
 				<div>Johnstown Taxes Due (2.25%)</div>
-				<div id="johnstown-taxes-due" class="result">$2250</div>
+				<div id="johnstown-taxes-due" class="result"></div>
 			</div>
 			<div class="data-row separator-dashed">
 				<div>Total Taxes Due (before 75% credit)</div>
-				<div id="gross-taxes-due" class="result">$4750</div>
+				<div id="gross-taxes-due" class="result"></div>
 			</div>
 			<div class="data-row">
 				<div>Johnstown Tax Credit</div>
-				<div id="johnstown-tax-credit" class="result">$1688</div>
+				<div id="johnstown-tax-credit" class="result"></div>
 			</div>
 			<div class="data-row separator-dashed">
 				<div>Total Taxes Due (after 75% credit)</div>
-				<div id="total-taxes-due" class="result">$3062</div>
+				<div id="total-taxes-due" class="result"></div>
 			</div>
 			<div class="data-row">
 				<div>Savings</div>
-				<div id="savings" class="result">$438</div>
+				<div id="savings" class="result"></div>
 			</div>
 		</div>
 
-		<div class="section">
+		<div id="tax-table" class="section">
 			<table cellpadding="0" cellspacing="0">
 				<tr>
-					<td>Columbus - 2.50%</td>
 					<td>Bexley - 2.50%</td>
-					<td>Gahanna - 2.50%</td>
-					<td>Hilliard - 2.50%</td>
-				</tr>
-				<tr>
-					<td>Reynoldsburg - 2.50%</td>
-					<td>Upper Arlington - 2.50%</td>
-					<td>Worthington - 2.50%</td>
 					<td>Brice - 2.00%</td>
+					<td>Canal Winchester - 2.00%</td>
+					<td>Columbus - 2.50%</td>
 				</tr>
 				<tr>
-					<td>Canal Winchester - 2.00%</td>
 					<td>Etna - 2.00%</td>
+					<td>Gahanna - 2.50%</td>
+					<td>Grandville - 1.50%</td>
 					<td>Grove City - 2.00%</td>
+				</tr>
+				<tr>
 					<td>Groveport - 2.00%</td>
+					<td>Heath - 2.00%</td>
+					<td>Hilliard - 2.50%</td>
+					<td>Mount Vernon - 2.00%</td>
 				</tr>
 				<tr>
 					<td>New Albany - 2.00%</td>
-					<td>Mount Vernon - 2.00%</td>
-					<td>Powell - 2.00%</td>
 					<td>Newark - 1.75%</td>
+					<td>Pataskala - 1.00%</td>
+					<td>Plain City - 1.50%</td>
 				</tr>
 				<tr>
-					<td>Utica - 1.75%</td>
-					<td>Plain City - 1.50%</td>
-					<td>Pataskala - 1.00%</td>
+					<td>Powell - 2.00%</td>
+					<td>Reynoldsburg - 2.50%</td>
 					<td>Sunbury - 1.00%</td>
+					<td>Westerville - 2.00%</td>
+				</tr>
+				<tr>
+					<td>Whitehall - 2.50%</td>
+					<td>Worthington - 2.50%</td>
+					<td>Upper Arlington - 2.50%</td>
+					<td>Utica - 1.75%</td>
 				</tr>
 			</table>
 		</div>
